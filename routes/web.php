@@ -17,16 +17,23 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-
+// Driver routes that require for orderTracking app
 $router->group(['prefix' => 'drivers'], function () use ($router) {
     $router->get('/', 'DriverController@streamIndex');
     $router->get('/{id}', 'DriverController@streamOne');
 });
 
+
+// Seed data route
+$router->post('/seed', 'SeedController@seed');
+$router->delete('/seed', 'SeedController@clear');
+
+// NoStream routes for testing
 $router->group(['prefix' => 'nostream'], function () use ($router) {
-    $router->get('/', function () use ($router) {
-        return $router->app->version();
+
+    $router->group(['prefix' => 'drivers'], function () use ($router) {
+        $router->get('/', 'DriverController@index');
+        $router->get('/{id}', 'DriverController@show');
     });
-    $router->get('/drivers', 'DriverController@index');
-    $router->get('/drivers/{id}', 'DriverController@show');
+
 });

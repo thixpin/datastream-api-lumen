@@ -5,11 +5,11 @@ namespace App\Models;
 use MongoDB\Laravel\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Driver extends Model
-{
+class Customer extends Model
+{   
     use HasFactory;
     protected $connection = 'mongodb';
-    protected $collection = 'drivers';
+    protected $collection = 'customers';
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +17,7 @@ class Driver extends Model
      * @var string[]
      */
     protected $fillable = [
-        'home_location_point', 
-        'driving_radius_miles', 
-        'current_order_id',
-        'current_order',
+        'full_name',
+        'mobile_number',
     ];
 }
