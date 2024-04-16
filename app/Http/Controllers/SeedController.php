@@ -13,7 +13,7 @@ class SeedController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return JsonResponse
      */
     public function seed(): JsonResponse
     {
@@ -22,6 +22,11 @@ class SeedController extends Controller
         return response()->json(['message' => 'Data seeded successfully', 'drivers' => $drivers, 'customers' => $customers], 201);
     }
 
+    /**
+     * Clear all data
+     *
+     * @return JsonResponse
+     */
     public function clear(): JsonResponse
     {
         Driver::truncate();

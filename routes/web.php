@@ -23,6 +23,13 @@ $router->group(['prefix' => 'drivers'], function () use ($router) {
     $router->get('/{id}', 'DriverController@streamOne');
 });
 
+// Order routes that require for orderTracking app
+$router->group(['prefix' => 'orders'], function () use ($router) {
+    $router->get('/', 'OrderController@index');
+    $router->get('/{id}', 'OrderController@show');
+    $router->post('/', 'OrderController@store');
+    $router->patch('/{id}/cancel', 'OrderController@cancel');
+});
 
 // Seed data route
 $router->post('/seed', 'SeedController@seed');
@@ -34,6 +41,16 @@ $router->group(['prefix' => 'nostream'], function () use ($router) {
     $router->group(['prefix' => 'drivers'], function () use ($router) {
         $router->get('/', 'DriverController@index');
         $router->get('/{id}', 'DriverController@show');
+    });
+
+    $router->group(['prefix' => 'customers'], function () use ($router) {
+        $router->get('/', 'CustomerController@index');
+        $router->get('/{id}', 'CustomerController@show');
+    });
+
+    $router->group(['prefix' => 'orders'], function () use ($router) {
+        $router->get('/', 'OrderController@index');
+        $router->get('/{id}', 'OrderController@show');
     });
 
 });
