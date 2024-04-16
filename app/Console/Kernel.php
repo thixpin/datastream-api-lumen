@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         \Illuminate\Console\KeyGenerateCommand::class,
+        Commands\OrderOperateCommand::class,
     ];
 
     /**
@@ -24,6 +25,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //
+        $schedule->command('order:operate')->everySecond()->onOneServer();
     }
 }

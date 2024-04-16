@@ -25,8 +25,8 @@ $router->group(['prefix' => 'drivers'], function () use ($router) {
 
 // Order routes that require for orderTracking app
 $router->group(['prefix' => 'orders'], function () use ($router) {
-    $router->get('/', 'OrderController@index');
-    $router->get('/{id}', 'OrderController@show');
+    $router->get('/', 'OrderController@streamIndex');
+    $router->get('/{id}', 'OrderController@streamOne');
     $router->post('/', 'OrderController@store');
     $router->patch('/{id}/cancel', 'OrderController@cancel');
 });
