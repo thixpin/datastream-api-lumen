@@ -1,25 +1,50 @@
-# Lumen PHP Framework
+# DataStream API - Lumen
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+This is a simple API that allows you to stream data for the food delivery app. It is built using the [Lumen](https://lumen.laravel.com/) framework.
 
-> **Note:** In the years since releasing Lumen, PHP has made a variety of wonderful performance improvements. For this reason, along with the availability of [Laravel Octane](https://laravel.com/docs/octane), we no longer recommend that you begin new projects with Lumen. Instead, we recommend always beginning new projects with [Laravel](https://laravel.com).
+## Requirements
+- PHP >= 8.3
+- Composer
+- MongoDB 
 
-## Official Documentation
+##### php-extenstions
+- ext-mongodb
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+##### MongoDB
+- We need to use cluster mode for the MongoDB. Cause of the MongoDB standalone mode does not support the change stream feature.
 
-## Contributing
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Installation
+```bash
+$ git clone
+$ cd datastream-api-lumen
+$ composer install
+$ cp .env.example .env
+$ php artisan key:generate
+$ php artisan db:seed
+$ php  -S localhost:8080 -t public
+```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## API Endpoints
+- [x] POST /seed - Seed data
+- [x] DELETE /seed - Clear data
+- [x] POST /orders - Create order
+- [x] PATCH /orders/{id}/cancel - Cancel order
+- [x] GET /orders - Stream orders
+- [x] GET /orders/{id} - Stream order detail
+- [x] GET /drivers - Stream drivers
+- [x] GET /drivers/{id} - Stream driver detail
+- [x] 
+- [x] GET /nostream/orders - Index orders
+- [x] GET /nostream/orders/{id} - Show order
+- [x] GET /nostream/drivers - Index drivers
+- [x] GET /nostream/drivers/{id} - Show driver
+- [x] GET /nostream/customers - Index customers
+- [x] GET /nostream/customers/{id} - Show customer
+
+
 
 ## License
 
