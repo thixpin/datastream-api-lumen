@@ -1,0 +1,443 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "3c1024ca-7c64-48b0-8f9d-87cb597eb0fa",
+            "name": "OrderTracker",
+            "description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2024-04-16T18:39:10.000Z",
+            "uid": "10837168-3c1024ca-7c64-48b0-8f9d-87cb597eb0fa",
+            "createdAt": null,
+            "lastUpdatedBy": null
+        },
+        "item": [
+            {
+                "name": "Seed data",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "a9cb038b-b258-4e00-8ead-19d724b67e0b",
+                            "exec": [
+                                "pm.test(\"Successful POST request\", function () {",
+                                "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                                "});",
+                                ""
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "54e32f5e-bbdb-405c-a656-d871cb2bcd2c",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "{{base_url}}/seed",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "seed"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-54e32f5e-bbdb-405c-a656-d871cb2bcd2c"
+            },
+            {
+                "name": "Seed Clean",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "a9cb038b-b258-4e00-8ead-19d724b67e0b",
+                            "exec": [
+                                "pm.test(\"Successful POST request\", function () {",
+                                "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                                "});",
+                                ""
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "54ee9fb7-ff48-403d-a824-4d8cae923bb1",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "DELETE",
+                    "header": [],
+                    "body": {
+                        "mode": "raw",
+                        "raw": "",
+                        "options": {
+                            "raw": {
+                                "language": "json"
+                            }
+                        }
+                    },
+                    "url": {
+                        "raw": "{{base_url}}/seed",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "seed"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-54ee9fb7-ff48-403d-a824-4d8cae923bb1"
+            },
+            {
+                "name": "CustomersIndex",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "657af911-9332-458d-9690-232e2786259f",
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/customers",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "customers"
+                        ]
+                    },
+                    "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+                },
+                "response": [],
+                "uid": "10837168-657af911-9332-458d-9690-232e2786259f"
+            },
+            {
+                "name": "CustomersShow",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "e9235871-d0ba-4db8-9166-cbb5506b073f",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "bef56e1c-99ac-4434-928b-661321691e55",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/customers/661ec4e723173d47290592c7",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "customers",
+                            "661ec4e723173d47290592c7"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-bef56e1c-99ac-4434-928b-661321691e55"
+            },
+            {
+                "name": "DriverIndex",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "4671b4ce-8175-492d-a144-92e918f5de29",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/drivers",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "drivers"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-4671b4ce-8175-492d-a144-92e918f5de29"
+            },
+            {
+                "name": "DriverShow",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "aee602e5-727c-4ed6-ba39-7a006dc85a31",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/drivers/661ecf464b2dd6ab8707ff93",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "drivers",
+                            "661ecf464b2dd6ab8707ff93"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-aee602e5-727c-4ed6-ba39-7a006dc85a31"
+            },
+            {
+                "name": "OrderCreate",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "161a7b10-eb0f-4831-8f0a-4ed9066f950c",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "POST",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/orders",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "orders"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-161a7b10-eb0f-4831-8f0a-4ed9066f950c"
+            },
+            {
+                "name": "OrderIndx",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "294b56e3-c618-49f6-bab3-50370fcb6d50",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/orders",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "orders"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-294b56e3-c618-49f6-bab3-50370fcb6d50"
+            },
+            {
+                "name": "OrderShow",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "bac33ee9-e51b-402b-b8d1-240fd89dcf74",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/nostream/orders/661ecf4a32710f85b9023342",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "nostream",
+                            "orders",
+                            "661ecf4a32710f85b9023342"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-bac33ee9-e51b-402b-b8d1-240fd89dcf74"
+            },
+            {
+                "name": "OrderCancel",
+                "event": [
+                    {
+                        "listen": "test",
+                        "script": {
+                            "id": "69b3bed4-5d87-4f90-b97a-7e66632ff02c",
+                            "exec": [
+                                "pm.test(\"Status code is 200\", function () {",
+                                "    pm.response.to.have.status(200);",
+                                "});"
+                            ],
+                            "type": "text/javascript",
+                            "packages": {}
+                        }
+                    }
+                ],
+                "id": "718de1f5-ac67-4095-82a6-ab5923472e33",
+                "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                },
+                "request": {
+                    "method": "PATCH",
+                    "header": [],
+                    "url": {
+                        "raw": "{{base_url}}/orders/661ecf4a32710f85b9023342/cancel",
+                        "host": [
+                            "{{base_url}}"
+                        ],
+                        "path": [
+                            "orders",
+                            "661ecf4a32710f85b9023342",
+                            "cancel"
+                        ]
+                    }
+                },
+                "response": [],
+                "uid": "10837168-718de1f5-ac67-4095-82a6-ab5923472e33"
+            }
+        ],
+        "event": [
+            {
+                "listen": "prerequest",
+                "script": {
+                    "id": "3c929894-0eb5-4dec-ba2d-b4e7505e71d5",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            },
+            {
+                "listen": "test",
+                "script": {
+                    "id": "be3308e3-7c16-486b-b6a1-764130511732",
+                    "type": "text/javascript",
+                    "exec": [
+                        ""
+                    ]
+                }
+            }
+        ],
+        "variable": [
+            {
+                "key": "base_url",
+                "value": "http://localhost:8080"
+            }
+        ]
+    }
+}
